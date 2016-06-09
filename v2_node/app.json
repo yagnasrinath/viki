@@ -1,0 +1,7 @@
+{
+  "name": "product_recognition",
+  "description": "product recognition",
+  "repository": "https://github.com/yagnasrinath/viki",
+  "logo": "",
+  "keywords": ["node", "express", "static"]
+}
