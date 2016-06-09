@@ -11,3 +11,7 @@
 - [css files](v2_node/public/css)
 - [js files](v2_node/public/js)
 
+##### 3 Push code to Heroku
+- `$ git push heroku master` 
+- Website link: [product-recognition.herokuapp.com](http://product-recognition.herokuapp.com)
+
