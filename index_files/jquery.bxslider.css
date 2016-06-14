@@ -183,3 +183,12 @@ ul.bxslider {
     height:27px;
     background:url('images/close.png') no-repeat center center;
 }
+.bx-panda{
+    display:block;
+    position:absolute;
+    bottom:6px;
+    right:100px;
+    width:27px;
+    height:27px;
+    background:url('images/panda.png') no-repeat center center;
+}
