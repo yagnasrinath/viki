@@ -39,7 +39,7 @@ def process_images(ffmpeg_dir):
 	product_mapping()
 
 	csvfilewrite = open('mapping.csv', 'w')
-	csvfilewrite.write('timestamp,product_name,url_rakuten,image_location\n')
+	csvfilewrite.write('timestamp,frame,product_name,url_rakuten,image_location\n')
 	
 	for file in os.listdir(ffmpeg_dir):
 		imageID = file.split('.')[0]
@@ -50,16 +50,17 @@ def process_images(ffmpeg_dir):
 			param = {'detection': 'all'}
 			searchResult = search_get_result(image_path, limit, param)
 			if searchResult == 'NULL':
-				csvfilewrite.write(str(timestamp)+', , , \n');
-				print(str(timestamp)+', , , \n');
+				csvfilewrite.write(str(timestamp)+', , , , \n');
+				print(str(timestamp)+', , , , \n');
 			else:
 				productInfo = productmap.get(searchResult)
 				ary = productInfo.split(',')
+				frame = str(file)
 				product_name = str(searchResult)
 				url_rakuten = str(ary[2])
 				image_location = str(ary[1])
-				csvfilewrite.write(str(timestamp)+','+product_name+','+url_rakuten+','+image_location+'\n');
-				print(str(timestamp)+','+product_name+','+url_rakuten+','+image_location+'\n');
+				csvfilewrite.write(str(timestamp)+','+frame+','+product_name+','+url_rakuten+','+image_location+'\n');
+				print(str(timestamp)+','+frame+','+product_name+','+url_rakuten+','+image_location+'\n');
 
 	csvfilewrite.close()
 

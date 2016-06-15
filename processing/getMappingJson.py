@@ -4,7 +4,7 @@ import json
 csvfile = open('mapping.csv', 'r')
 jsonfile = open('mapping.json', 'w')
 
-fieldnames = ("timestamp","product_name","url_rakuten","image_location")
+fieldnames = ("timestamp","frame","product_name","url_rakuten","image_location")
 reader = csv.DictReader(csvfile, fieldnames)
 jsonfile.write('{\n')
 i=0
