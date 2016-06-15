@@ -49,10 +49,7 @@ def process_images(ffmpeg_dir):
 			limit = 1 
 			param = {'detection': 'all'}
 			searchResult = search_get_result(image_path, limit, param)
-			if searchResult == 'NULL':
-				csvfilewrite.write(str(timestamp)+', , , , \n');
-				print(str(timestamp)+', , , , \n');
-			else:
+			if searchResult != 'NULL':
 				productInfo = productmap.get(searchResult)
 				ary = productInfo.split(',')
 				frame = str(file)
