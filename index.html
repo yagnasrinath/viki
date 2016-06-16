@@ -3274,20 +3274,20 @@ Sign in here
 
                                                         <script type="text/javascript">
 
+                                                        function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
                                                             $('video').on("timeupdate", function () {
-                                                                    //get the current item from json map for current time
-                                                                    //add it to carousel and increment the count
-                                                                    //move the carousel to the corresponding slide
-                                                                    //count=count+1;
-                                                                   //setTimeout(continueExecution, 1000); 
                                                                     if ([Math.round(this.currentTime).toString()] in ptm ) {
-                                                                 //       if(ptm[Math.round(this.currentTime).toString()]["used"] == "false") {
                                                                             console.log(Math.round(this.currentTime.toString()));
-                                                                 //           window.ptm[Math.round(this.currentTime).toString()]["used"]="true";
                                                                             $('#fashioncarousel').append('<li><div style="width:300px;height:150px"><img src="'+ptm[Math.round(this.currentTime).toString()]["image_location"]+'" /></div></li> ');
-                                                                            //alert("every second");
-                                                                            $('#fashioncarousel').goToSlide(Math.round(this.currentTime));
-                                                                  //      }
+                                                                            sleep(1000)
                                                                     }
                                                                 }
                                                             )
