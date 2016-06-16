@@ -1,1 +1,0 @@
-raynor.adHandler.jsBlocked = false;
