@@ -3286,7 +3286,8 @@ Sign in here
                                                             $('video').on("timeupdate", function () {
                                                                     if ([Math.round(this.currentTime).toString()] in ptm ) {
                                                                             console.log(Math.round(this.currentTime.toString()));
-                                                                            $('#fashioncarousel').append('<li><div style="width:300px;height:150px"><img src="'+ptm[Math.round(this.currentTime).toString()]["image_location"]+'" /></div></li> ');
+                                                                            $('#fashioncarousel').append('<li><div style="width:300px;height:150px"><img class="normalimage" src="'+ptm[Math.round(this.currentTime).toString()]["image_location"]+'" /></div></li> ');
+                                                                            $('.bxslider').animate({ "scrollLeft":1000, });
                                                                             sleep(1000)
                                                                     }
                                                                 }
@@ -4021,8 +4022,8 @@ Start your free trial
 
                             <a class="bx-close" id='hideshow' value='hide/show'></a>
                             <div class="card-content">
-                                <div class="row">
-                                    <ul class="bxslider" style="display:flex;list-style:none;overflow-x:scroll" id="fashioncarousel">
+                                <div class="row" >
+                                    <ul class="bxslider" style="display:flex;list-style:none;overflow-x:scroll;min-height:160px"id="fashioncarousel">
                                         
                                     </ul>
                                 </div>
