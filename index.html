@@ -2814,7 +2814,8 @@ minSlides: 2,
 maxSlides: 2,
 slideWidth: 360,
 slideMargin: 10,
-pager: false
+pager: false,
+responsive: false
 });
                                         //$('#fashioncarousel').append('<li> <div style="width:300px;height:150px"><img src="./index_files/jsonimages/116.png" /> </div> </li>');
                                         });
@@ -3273,7 +3274,7 @@ Sign in here
                                                         </script>
 
                                                         <script type="text/javascript">
-
+                                                        var slideOffset = 0;
                                                         function sleep(milliseconds) {
   var start = new Date().getTime();
   for (var i = 0; i < 1e7; i++) {
@@ -3287,7 +3288,17 @@ Sign in here
                                                                     if ([Math.round(this.currentTime).toString()] in ptm ) {
                                                                             console.log(Math.round(this.currentTime.toString()));
                                                                             $('#fashioncarousel').append('<li><div style="width:300px;height:150px"><img class="normalimage" src="'+ptm[Math.round(this.currentTime).toString()]["image_location"]+'" /></div></li> ');
-                                                                            $('.bxslider').animate({ "scrollLeft":1000, });
+                                                                            $('.bxslider').css('width', '100%');
+                                                                            slideOffset += 5400;
+                                                                            $('.bxslider').animate({ 
+                                                                                scrollLeft: slideOffset
+                                                                                }, 
+                                                                                10, 
+                                                                                function(){
+                                                                                    console.log("scrollLeft done.")
+                                                                                }
+                                                                            );
+
                                                                             sleep(1000)
                                                                     }
                                                                 }
